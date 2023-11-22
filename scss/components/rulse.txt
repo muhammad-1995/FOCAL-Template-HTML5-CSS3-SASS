@@ -1,0 +1,15 @@
+@include media-query("phone") {
+
+}
+@include media-query("tablet") {
+
+}
+@include media-query("small-laptop") {
+
+}
+@include media-query("laptop") {
+
+}
+@include media-query("desktop") {
+
+}

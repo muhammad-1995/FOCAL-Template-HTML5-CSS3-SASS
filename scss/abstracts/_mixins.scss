@@ -1,0 +1,60 @@
+// Create CSS prefixes for the properties you need
+@mixin prefixes($property, $value) {
+  #{$property}: $value;
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+}
+
+// Create Global Media Query
+@mixin media-query($type-screen) {
+  @if $type-screen == "phone" {
+    // Breakpoint for small devices (phones)
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $type-screen == "tablet" {
+    // Breakpoint for tablets
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $type-screen == "small-laptop" {
+    // Breakpoint for small laptops
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $type-screen == "laptop" {
+    // Breakpoint for laptops
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $type-screen == "desktop" {
+    // Breakpoint for large desktops
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Centering Box
+@mixin centering($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+  @include prefixes(transform, translate(-$left, -$top));
+}
+
+// Background Cover
+@mixin cover($image, $repeat, $size, $position) {
+  background-image: $image;
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+// Distribution of boxes by Grid
+@mixin boxes-grid($value-size) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($value-size, 1fr));
+}

@@ -1,0 +1,84 @@
+@use "../abstracts/" as *;
+/* Bannar Section Start */
+
+.bannar {
+  height: 100vh;
+  position: relative;
+}
+.bannar {
+  height: 100vh;
+  position: relative;
+  @include cover(url("../images/banner.jpg"), no-repeat, cover, center center);
+  @include media-query("tablet") {
+    height: 50vh;
+  }
+  @include media-query("small-laptop") {
+    height: 50vh;
+  }
+  .bannar-skin {
+    background-color: $primary-bg-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .container {
+    height: 100%;
+    position: relative;
+    .banner-content {
+      width: 100%;
+      @include centering(absolute, 50%, 50%);
+      text-align: center;
+      .title {
+        %pseudo-border {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $light-color;
+        }
+        h1 {
+          width: 70%;
+          margin: auto;
+          position: relative;
+          color: $light-color;
+          font-size: calc($super-large-font-size * 2);
+          text-transform: uppercase;
+          font-weight: $extra-bold-font-weight;
+          &::before {
+            @extend %pseudo-border;
+          }
+          &::after {
+            @extend %pseudo-border;
+            top: 100%;
+          }
+          @include media-query("phone") {
+            width: 100%;
+            font-size: 2.5rem;
+          }
+          @include media-query("tablet") {
+            width: 100%;
+            font-size: 2.5rem;
+          }
+          @include media-query("small-laptop") {
+            width: 85%;
+            font-size: 2.5rem;
+          }
+          @include media-query("laptop") {
+            width: 75%;
+            font-size: 3rem;
+          }
+          span {
+            display: block;
+            padding: 30px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Bannar Section End */

@@ -1,0 +1,42 @@
+/* Default styles for the container */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Breakpoint for small devices (phones) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* Breakpoint for tablets */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Breakpoint for small laptops */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Breakpoint for laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Breakpoint for large desktops */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1320px;
+  }
+}

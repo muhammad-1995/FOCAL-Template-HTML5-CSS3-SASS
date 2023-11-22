@@ -1,0 +1,61 @@
+@use "../abstracts/" as *;
+
+/* Portfolio Section Start */
+
+.portfolio {
+  padding: $section-padding;
+  .portfolio-content {
+    .portfolio-header {
+      text-align: center;
+      .section-description {
+        max-width: 80%;
+        margin: auto;
+        @include media-query("phone") {
+          max-width: 100%;
+        }
+        @include media-query("tablet") {
+          max-width: 100%;
+        }
+      }
+    }
+    .portfolio-images {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+      gap: 30px;
+      justify-content: center;
+      .image-box {
+        position: relative;
+        border: 1px solid #adadad;
+        padding: 80px;
+        background-color: #efefef;
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          background-color: #2ecc7170;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          @include prefixes(transition, opacity 0.3s linear);
+          i {
+            font-size: 50px;
+            font-weight: $extra-bold-font-weight;
+            color: $light-color;
+            cursor: pointer;
+          }
+        }
+        &:hover {
+          .overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Portfolio Section End */

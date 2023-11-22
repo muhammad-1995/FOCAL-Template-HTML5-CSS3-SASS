@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+/* Resume section Start */
+
+.resume {
+  position: relative;
+  background-color: $secondary-bg-color;
+  padding: $section-padding;
+  .resume-content {
+    text-align: center;
+    .section-description {
+      margin-bottom: 0;
+    }
+  }
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    content: "";
+    border-style: solid;
+    border-width: 20px;
+    border-color: $secondary-bg-color transparent transparent transparent;
+    @include prefixes(transform, translateX(-50%));
+  }
+}
+
+/* Resume section End */

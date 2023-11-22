@@ -1,0 +1,57 @@
+@use "../abstracts/" as *;
+
+/* Quote Section Start */
+
+.quote {
+  padding: $section-padding;
+  background-color: $secondary-bg-color;
+  .quote-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    gap: 35px;
+    q {
+      width: 70%;
+      font-style: italic;
+      color: $secondary-tx-color;
+      font-size: $medium-font-size;
+      line-height: $line-height;
+      @include media-query("phone") {
+        width: 90%;
+      }
+      @include media-query("tablet") {
+        width: 90%;
+      }
+    }
+    .name {
+      font-size: $medium-font-size;
+      font-weight: $extra-bold-font-weight;
+      color: $primary-tx-color;
+      text-transform: uppercase;
+    }
+    .polit {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      span {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border: 1px solid $primary-color;
+        cursor: pointer;
+        @include prefixes(border-radius, 50%);
+        @include prefixes(transition, background 0.5s linear);
+        &.active {
+          background-color: $primary-color;
+        }
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Quote Section End */

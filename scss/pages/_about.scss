@@ -1,0 +1,95 @@
+@use "../abstracts/" as *;
+
+/* Section About Me Start */
+
+.about-me {
+  position: relative;
+  background-color: $secondary-bg-color;
+  //   display: flex;
+  .about-image {
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    @include cover(
+      url("../images/profile.jpg"),
+      no-repeat,
+      cover,
+      center center
+    );
+    @include media-query("phone") {
+      display: none;
+    }
+    @include media-query("tablet") {
+      display: none;
+    }
+    @include media-query("small-laptop") {
+      display: none;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    .about-content {
+      width: 50%;
+      padding: $section-padding;
+      @include media-query("phone") {
+        width: 100%;
+      }
+      @include media-query("tablet") {
+        width: 100%;
+      }
+      @include media-query("small-laptop") {
+        width: 100%;
+      }
+    }
+    .service-wrapper {
+      @include boxes-grid(250px);
+      row-gap: 25px;
+      .box {
+        display: flex;
+        gap: 25px;
+        .box-icon {
+          i {
+            font-size: 40px;
+            color: $primary-color;
+          }
+        }
+        .box-contnet {
+          h3 {
+            font-size: $large-font-size;
+            color: $primary-tx-color;
+            text-transform: uppercase;
+          }
+          p {
+            color: $secondary-tx-color;
+            line-height: $line-height;
+            font-size: $normal-font-size;
+          }
+        }
+      }
+      @include media-query("phone") {
+        @include boxes-grid(100%);
+      }
+      @include media-query("tablet") {
+        @include boxes-grid(100%);
+      }
+      @include media-query("small-laptop") {
+        @include boxes-grid(100%);
+      }
+      @include media-query("laptop") {
+        @include boxes-grid(100%);
+      }
+    }
+    @include media-query("phone") {
+      display: block;
+    }
+    @include media-query("tablet") {
+      display: block;
+    }
+    @include media-query("small-laptop") {
+      display: block;
+    }
+  }
+}
+
+/* Section About Me End */

@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+/* Section Intro Start */
+
+.intro {
+  padding: $section-padding;
+  .container {
+    @include boxes-grid(300px);
+    gap: 44px;
+    .box {
+      .intro-title {
+        font-size: calc($extra-large-font-size - 3px);
+        font-weight: $normal-font-weight;
+        text-transform: uppercase;
+        color: $primary-tx-color;
+      }
+      .intro-text {
+        font-size: $medium-font-size;
+        color: $secondary-tx-color;
+        line-height: $line-height;
+      }
+    }
+  }
+}
+
+/* Section Intro End */

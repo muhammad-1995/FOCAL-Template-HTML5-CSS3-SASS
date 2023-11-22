@@ -1,0 +1,118 @@
+@use "../abstracts/" as *;
+
+/* Navigation Section Start */
+
+%flex-use {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navigation {
+  position: sticky;
+  top: -1px;
+  background-color: $primary-bg-color;
+  margin-top: -80px;
+  z-index: 100;
+  .container {
+    .nav-content {
+      height: 80px;
+      @extend %flex-use;
+      justify-content: space-between;
+      text-transform: uppercase;
+      .logo {
+        @extend %flex-use;
+        gap: 23px;
+        .letter-image img {
+          width: 40px;
+        }
+        .logo-name {
+          font-size: $medium-font-size;
+          font-weight: $extra-bold-font-weight;
+          color: $light-color;
+          .special {
+            color: $primary-color;
+          }
+        }
+      }
+      .burger-icon {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 40px;
+        height: 33px;
+        border: 1px solid $light-color;
+        padding: 5px;
+        cursor: pointer;
+        @include prefixes(border-radius, 5px);
+        span {
+          display: block;
+          height: 2px;
+          width: 100%;
+          background-color: #888;
+        }
+        @include media-query("laptop") {
+          display: none;
+        }
+        @include media-query("desktop") {
+          display: none;
+        }
+      }
+      .links-list {
+        @extend %flex-use;
+        li {
+          a {
+            display: block;
+            color: $light-color;
+            font-size: $medium-font-size;
+            font-weight: $extra-bold-font-weight;
+            padding: 1.875rem 1.25rem;
+            &.active {
+              color: $primary-color;
+            }
+            &:hover {
+              color: $primary-color;
+            }
+            @include media-query("phone") {
+              font-size: $small-font-size;
+            }
+            @include media-query("tablet") {
+              font-size: $small-font-size;
+            }
+            @include media-query("laptop") {
+              font-size: $small-font-size;
+            }
+          }
+        }
+        @mixin menu-position {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: $primary-bg-color;
+          flex-direction: column;
+          align-items: flex-start;
+          @include prefixes(transform, scaleY(0));
+          @include prefixes(transform-origin, top);
+          @include prefixes(transition, transform 0.5s linear);
+        }
+        @include media-query("phone") {
+          @include menu-position;
+        }
+        @include media-query("tablet") {
+          @include menu-position;
+        }
+        @include media-query("small-laptop") {
+          @include menu-position;
+        }
+      }
+    }
+    .burger-icon {
+      &:hover + .links-list {
+        @include prefixes(transform, scaleY(1));
+      }
+    }
+  }
+}
+
+/* Navigation Section End */

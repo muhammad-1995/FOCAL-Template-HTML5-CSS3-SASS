@@ -1,0 +1,76 @@
+@use "../abstracts/" as *;
+
+/* Education Section Start */
+
+.education {
+  padding: $section-padding;
+  .education-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .column-left {
+      width: 48%;
+      @include media-query("phone") {
+        width: 100%;
+      }
+      @include media-query("tablet") {
+        width: 100%;
+      }
+    }
+    .column-right {
+      width: 48%;
+      margin-top: 100px;
+
+      .resume-box {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 13px;
+        &:not(:last-child) {
+          margin-bottom: 70px;
+        }
+        h3 {
+          font-size: $extra-large-font-size;
+          font-weight: $bold-font-weight;
+          color: $primary-tx-color;
+          text-transform: uppercase;
+        }
+        .date {
+          text-transform: capitalize;
+          font-size: $medium-font-size;
+          color: $secondary-tx-color;
+        }
+        .result {
+          width: fit-content;
+          text-transform: uppercase;
+          background-color: $primary-color;
+          color: $light-color;
+          font-size: $medium-font-size;
+          font-weight: $bold-font-weight;
+          padding: 10px 13px;
+        }
+        hr {
+          width: 100%;
+          border: 0;
+          border-top: 1px solid #eee;
+        }
+        .text {
+          margin: 0;
+          font-size: $medium-font-size;
+          color: $secondary-tx-color;
+          line-height: $line-height;
+        }
+      }
+      @include media-query("phone") {
+        margin-top: 30px;
+        width: 100%;
+      }
+      @include media-query("tablet") {
+        margin-top: 30px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Education Section End */

@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+
+/* My Skills Section Start */
+
+.skills-content {
+  padding: $section-padding;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .content {
+    width: 49%;
+    @include media-query("phone") {
+      width: 100%;
+    }
+    @include media-query("tablet") {
+      width: 100%;
+    }
+  }
+  .progress {
+    width: 49%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    .progress-box {
+      .box-title {
+        display: block;
+        font-size: $medium-font-size;
+        color: $primary-tx-color;
+        font-weight: $extra-bold-font-weight;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .percentage {
+        height: 30px;
+        background-color: $secondary-bg-color;
+        .percentage-number {
+          display: block;
+          background-color: $primary-color;
+          height: 100%;
+          line-height: 30px;
+          text-align: right;
+          color: $light-color;
+          font-weight: $extra-bold-font-weight;
+          padding-right: 15px;
+        }
+      }
+    }
+    @include media-query("phone") {
+      width: 100%;
+    }
+    @include media-query("tablet") {
+      width: 100%;
+    }
+  }
+}
+
+/* My Skills Section End */

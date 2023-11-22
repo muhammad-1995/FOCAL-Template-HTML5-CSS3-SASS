@@ -1,0 +1,52 @@
+@use "../abstracts/" as *;
+
+/* Components Start */
+
+// Button Default
+.button {
+  margin-top: 50px;
+  .btn-default {
+    display: inline-block;
+    font-size: $medium-font-size;
+    font-weight: $extra-bold-font-weight;
+    text-transform: uppercase;
+    color: $light-color;
+    border: 2px solid $light-color;
+    padding: $heading-padding-title-top 2.1875rem;
+    @include prefixes(transition, (background 0.4s linear, color 0.4s linear));
+    &:hover {
+      background-color: $light-color;
+      color: $primary-color;
+      border-color: $light-color;
+    }
+    &.change {
+      // change class
+      color: $primary-color;
+      border-color: $primary-color;
+      &:hover {
+        background-color: $primary-color;
+        color: $light-color;
+      }
+    }
+  }
+}
+/* Components End */
+
+// heading & description
+.heading-title {
+  color: $primary-tx-color;
+  text-transform: uppercase;
+  font-size: $super-large-font-size;
+  margin: 20px 0 50px;
+}
+.section-description {
+  margin-bottom: 60px;
+  > p {
+    color: $secondary-tx-color;
+    line-height: $line-height;
+    font-size: $medium-font-size;
+    &:first-of-type {
+      margin-bottom: 35px;
+    }
+  }
+}
